@@ -14,6 +14,9 @@ class PersonRepoTest {
     @Autowired
     private PersonRepo personRepo;
 
+    @Autowired
+    private Person person;
+
     @Test
     void findById( ) {
         int id = 1;
@@ -26,9 +29,9 @@ class PersonRepoTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    @AfterEach
-    void tearDown() {
-        System.out.println("tearing down");
-        personRepo.deleteAll();
-    }
+//    @AfterEach
+//    void tearDown() {
+//        System.out.println("tearing down");
+//        personRepo.deleteById(person.getId());
+//    }
 }
